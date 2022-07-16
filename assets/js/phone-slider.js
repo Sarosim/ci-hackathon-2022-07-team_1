@@ -4,18 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let isGoingRight = false
     let isGoingLeft = false
     speed = 20 // can determine speed of slider
+    let leftTimerId
+    let rightTimerId
 
     function slideRight() {
+        if (isGoingLeft) {
+            clearInterval(leftTimerId)
+            isGoingLeft = false
+        }
         isGoingRight = true
-        let rightTimerID = setInterval( function () {
+        rightTimerId = setInterval( function () {
             position += 15
         slider.style.left = position + 'px'
         }, speed)
     }
 
     function slideLeft() {
+        if (isGoingRight) {
+            clearInterval(rightTimerId)
+            isGoingRight = false
+        }
         isGoingLeft = true
-        let leftTimerID = setInterval( function () {
+        leftTimerId = setInterval( function () {
             position -= 15
         slider.style.left = position + 'px'
         }, speed)
