@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.querySelector('.phone-slider')
-    let right = 0
+    let position = 0
 
     function slideRight() {
-        right += 15
-        slider.style.left = right + 'px'
-        console.log(slider.style.left)
+        position += 15
+        slider.style.left = position + 'px'
     }
     slideRight()
 
     function slideLeft() {
-        right -= 15
-        slider.style.left = right + 'px'
-        console.log(slider.style.left)
+        position -= 15
+        slider.style.left = position + 'px'
     }
     slideLeft()
 
