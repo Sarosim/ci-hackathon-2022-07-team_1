@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let position = 0
     let isGoingRight = false
     let isGoingLeft = false
-    speed = 20 // can determine speed of slider
+    speed = 50 // can determine speed of slider
     let leftTimerId
     let rightTimerId
 
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.style.left = position + 'px'
         }, speed)
     }
+
 
     // assign functions to keys
     function control(e) {
