@@ -28,15 +28,7 @@ main{
     
     padding: 2rem;
 }
-footer{
-    padding: 2rem;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
 
-}
 h1{
     font-family: 'Audiowide', cursive;
     font-size: 7.2rem;
@@ -102,6 +94,13 @@ li{
 
 /* Game */
 
+.cloud{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 5rem;
+    background-color: aqua;
+    
+}
 #cloud-container{
     display: flex;
     justify-content: space-evenly;
@@ -110,39 +109,71 @@ li{
 .cloud-wrapper {
     width: 80%;
     margin: 0 auto;
-    height: 70vh;
+    height: 80vh;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid black;
     margin-bottom: 2rem;
-    background: url("../assets/images/Background-Game1.png") no-repeat center center;
-    background-size: cover;
+    background: url("../images/Background-Game1.png");
+    background-position: center;
+    background-size: auto 100%;
+    animation: slide 120s linear infinite;
 }
 
+@keyframes slide {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -1920px 0;
+    }
+  }
+
+#iphone{
+    position: absolute;
+    bottom: 1%;
+    width: 15%;
+    margin-bottom: 1rem;
+}
+.github-logo{
+    font-size: 2rem;
+}
 .cloud-img{
-    width: 15rem;
+    width: 14rem;
     margin-top: 1rem;
 }
 
-/* Phone */
-
-#iphone{
-    width: 18rem;
-    margin-bottom: 4rem;
+#ci-1 {
+    transform: translate(18px, 45px);
 }
+
+#ci-2 {
+    transform: translate(38px, -5px);
+}
+
+#ci-3 {
+    transform: translate(-8px, 25px);
+}
+
+#ci-4 {
+    transform: translate(21px, 62px);
+}
+
 
 /*  Footer */
 
 footer {
     background-color: #5A5A5A;
     color: #fcfcef;
-
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
 }
 
 footer p {
     float: left;
     margin-top: 1rem;
-
 }
 
 .github-logo{
@@ -153,8 +184,6 @@ footer p {
 .github-logo:hover {
     color: #FFEB85;
 }
-
-
 
 /* Home page*/
 
