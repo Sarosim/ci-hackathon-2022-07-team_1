@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let position = 0
     let isGoingRight = false
     let isGoingLeft = false
-    speed = 25 // can determine speed of slider
+    speed = 30 // can determine speed of slider
     let leftTimerId
     let rightTimerId
 
@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         isGoingRight = true
         rightTimerId = setInterval( function () {
-            if (position <= screen.width) {
-                position += 15
-                slider.style.left = position + 'px'
+            if (position <= 100) {
+                position += 2
+                slider.style.left = position + '%'
             } else {
                 clearInterval(rightTimerId)
                 isGoingRight = false
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         isGoingLeft = true
         leftTimerId = setInterval( function () {
             if (position >= 0) {
-            position -= 15
-            slider.style.left = position + 'px'
+            position -= 2
+            slider.style.left = position + '%'
             } else {
                 clearInterval(leftTimerId)
                 isGoingLeft = false
