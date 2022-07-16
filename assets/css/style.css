@@ -90,14 +90,27 @@ li{
 .cloud-wrapper {
     width: 80%;
     margin: 0 auto;
-    height: 60vh;
+    height: 80vh;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid black;
     margin-bottom: 2rem;
-    background: url("../photos/game-background.jpg") no-repeat center center;
+    background: url("../photos/game-background.jpg");
+    background-position: center;
+    background-size: auto 100%;
     background-size: cover;
+    animation: slide 120s linear infinite;
 }
+
+@keyframes slide {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -1920px 0;
+    }
+  }
+
 #iphone{
     width: 18rem;
     margin-bottom: 1rem;
@@ -108,4 +121,20 @@ li{
 .cloud-img{
     width: 14rem;
     margin-top: 1rem;
+}
+
+#ci-1 {
+    transform: translate(18px, 45px);
+}
+
+#ci-2 {
+    transform: translate(38px, -5px);
+}
+
+#ci-3 {
+    transform: translate(-8px, 25px);
+}
+
+#ci-4 {
+    transform: translate(21px, 62px);
 }
