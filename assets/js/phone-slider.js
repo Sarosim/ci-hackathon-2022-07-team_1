@@ -1,23 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.querySelector('.phone-slider')
+    console.log(slider)
     let position = 0
     let isGoingRight = false
     let isGoingLeft = false
-    speed = 30 // can determine speed of slider
+    speed = 25 // can determine speed of slider
     let leftTimerId
     let rightTimerId
 
     function slideRight() {
-        console.log(screen.width)
         if (isGoingLeft) {
             clearInterval(leftTimerId)
             isGoingLeft = false
         }
         isGoingRight = true
         rightTimerId = setInterval( function () {
-            if (position <= 100) {
-                position += 2
+            if (position <= 86) {
+                position += 1
                 slider.style.left = position + '%'
+                console.log(slider.style.left)
             } else {
                 clearInterval(rightTimerId)
                 isGoingRight = false
@@ -26,14 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function slideLeft() {
+        console.log("Left pressed");
         if (isGoingRight) {
             clearInterval(rightTimerId)
             isGoingRight = false
         }
         isGoingLeft = true
         leftTimerId = setInterval( function () {
-            if (position >= 0) {
-            position -= 2
+            if (position >= 1) {
+            position -= 1
             slider.style.left = position + '%'
             } else {
                 clearInterval(leftTimerId)
