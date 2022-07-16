@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let position = 0
     let isGoingRight = false
     let isGoingLeft = false
-    speed = 25 // can determine speed of slider
+    speed = 35 // can determine speed of slider
     let leftTimerId
     let rightTimerId
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         isGoingRight = true
         rightTimerId = setInterval( function () {
-            if (position <= 86) {
+            if (position <= 84) {
                 position += 1
                 slider.style.left = position + '%'
                 console.log(slider.style.left)
