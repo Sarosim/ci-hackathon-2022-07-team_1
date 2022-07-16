@@ -11,11 +11,39 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <title>Catching Feelings</title>
 </head>
-<body>
+<body class="container">
+    <header class="flex">
+        <a href="#home.html" class="nav-home-btn">Home</a>
+        <h1>Catching Feelings 😍</h1>
+        <ul class="flex">
+            <li>Score: <span id="score">35</span></li>
+            <li>Timer: <span id="timer">5:00</span></li>
+            <li>Level : <span id="level">2</span></li>
+            <li>My High Score: <span id="high-score">25</span></li>
+        </ul>
 
-    <div class="game">
+    </header>
+    <main>
+        <div class="cloud-wrapper flex">
+            <div id="cloud-container">
+                
+                <img class="cloud-img" src="./assets/photos/Cloud.png" alt="">
+                <img class="cloud-img" src="./assets/photos/Cloud.png" alt="">
+                <img class="cloud-img" src="./assets/photos/Cloud.png" alt="">
+                <img class="cloud-img" src="./assets/photos/Cloud.png" alt="">
+                
+            </div>
+            <img id="iphone" class="phone-slider" src="./assets/photos/Phone2.png" alt="drawing of an iPhone">
+        </div>
+        
+    </main>
+    <footer>
+        <a href=""><i class="fab fa-github github-logo"></i></a>
+    </footer>
+    <script src="https://kit.fontawesome.com/bc2311dd0c.js" crossorigin="anonymous"></script>
+    <!-- <div class="game">
         <div class="phone-slider"></div>
-    </div>
+    </div> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
