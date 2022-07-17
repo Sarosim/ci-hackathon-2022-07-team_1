@@ -121,6 +121,16 @@ li{
     animation: slide 120s linear infinite;
 }
 
+/* emojis */
+.emoji {
+    margin: 2em;
+    height: auto;
+    width: 50px;
+    position: absolute;
+    overflow: hidden;
+    }
+
+
 @keyframes slide {
     from {
       background-position: 0 0;
