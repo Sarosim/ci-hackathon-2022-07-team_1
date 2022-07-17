@@ -48,7 +48,7 @@ function decreaseScore() {
  * update the high score if it's higher
  */
 
-let finalScore = 0;
+let finalScore = score;
 let highScore = document.getElementById("high-score");
 
 function increaseHighScore() {
