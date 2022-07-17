@@ -9,5 +9,5 @@ function closeInstructions(){
     instructionsModal.style.display = "none";
 }
 instructionsBtn.addEventListener("click", openInstructions);
-closeInstructionsBtn.addEventListener("click", closeInstructions);
+closeInstructionsBtn.addEventListener("click", closeRestart);
 
