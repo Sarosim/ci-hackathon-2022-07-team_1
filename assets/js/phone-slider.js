@@ -50,5 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
             slideLeft(); // for when we press left
         }
     }
+
+    function endControl(e) {
+        if (e.keyCode === 39) { 
+            window.cancelAnimationFrame(rightTimerId); // will stop the slider going right once we stop pressing the key
+        } else if (e.keyCode === 37) { 
+            window.cancelAnimationFrame(leftTimerId); // will stop the slider going left once we stop pressing the key
+        }
+    }
+
     document.addEventListener('keydown', control);
+    document.addEventListener('keyup', endControl);
 })
