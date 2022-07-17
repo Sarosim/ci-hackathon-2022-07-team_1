@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(function () {
     let id = positionXArray[Math.floor(Math.random() * positionXArray.length) + 1];
     let gameScreen = document.getElementById("screen-size")
-    let emPosX = id
+    let emPosLeft = id
     let emoji = document.createElement("img");
     emoji.className = "emoji";
     let emojiImg = emojiArray[Math.floor(Math.random() * emojiArray.length)];
@@ -29,24 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
     let emojiID = numOfDrops.length + 1
     numOfDrops.push(emojiID)
     emoji.setAttribute("id", emojiID)
-    emoji.style.left = emPosX + "%"
+    emoji.style.left = emPosLeft + "%"
     let emPosY = emoji.style.top
-    gameScreen.appendChild(emoji)
+     gameScreen.appendChild(emoji)
 
-
+    // Gets sizes, x and y for working elements positions
     let wrapperHeight = gameScreen.clientHeight
     let emojiHeight = emoji.clientHeight + 50
+    let phone = document.getElementById("iphone")
+    let iphone = phone.getBoundingClientRect()
 
-        //Sets the point at which the emoji is removed from the screen
+        /*Check to see if emoSets the point at which the emoji is removed from the screen 
+        */
         setInterval(function() {
+            let emPosX = emoji.style.left
+
             if (emPosY <= wrapperHeight - emojiHeight) {
                 let newPosY = emPosY ++
                 emoji.style.top = newPosY + "px"
-                // This is just for testing the high Score
-                scoreElement.textContent = numOfDrops.length;
+                if (iphone.left == emPosX && iphone.top == emPosY){
+                    console.log("We have contact")
+                    emoji.remove()
+                }
             } else {
                 emoji.remove()
             }
-            }, 10) // Speed to be set to increase as user moves though the game
+        }, 10) // Speed to be set to increase as user moves though the game
     }, 2000) // Speed to be set to increase as user moves though the game
 })
