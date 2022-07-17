@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+    let scoreElement = document.getElementById("score");
     const positionXArray = [14, 28, 42, 56, 70, 84,]
 
     const emojiArray = [ 
@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (emPosY <= wrapperHeight - emojiHeight) {
                 let newPosY = emPosY ++
                 emoji.style.top = newPosY + "px"
+                // This is just for testing the high Score
+                scoreElement.textContent = numOfDrops.length;
             } else {
                 emoji.remove()
             }
