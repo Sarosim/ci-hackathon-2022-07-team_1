@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 let score = 0;
 let iphone = document.getElementById("iphone");
 
@@ -26,20 +28,6 @@ const negativeEmojis = [
 ]
 
 /**
- * Function to check which emojis 
- * positively or negatively impact the score
- */
-
-setInterval(function() {
-
-    if (positiveEmojis) emPosX + emPosY === iphone emPosX {
-        increaseScore(), emoji.remove();
-    } else (negativeEmojis) {
-        decreaseScore(), emoji.remove();
-    }, 10
-    })
-
-/**
  * Gets the current score and increases it by 1
  */
 
@@ -56,22 +44,37 @@ function decreaseScore() {
 }
 
 /**
- * Check the final score and
- * update the high score if higher
+ * Check the score and
+ * update the high score if it's higher
  */
 
-let finalScore = document.getElementById("finalScore");
+let finalScore = 0;
 let highScore = document.getElementById("high-score");
 
-function finalScore() {
+function increaseHighScore() {
 
     if (finalScore >= highScore) {
-
-        let newHighScore = document.getElementById("high-score").innerText = ++highScore;
-
-    } else {
-
-        let highScore = highScore; 
-    }
-    
+        let newHighScore = document.getElementById("high-score").innerText = finalScore;
+    } 
 }
+})
+
+function lowScore() {
+    if (finalScore <= 20) {
+        message_p.innerHTML = `You got ${(finalScore)} 💩! Maybe you need more practice.`;
+    }
+}
+
+function midScore() {
+    if (finalScore >= 21 && finalScore <= 40) {
+        message_p.innerHTML = `You got ${(finalScore)} 😃! Not bad you've got a feel for this.`;
+    }
+}
+
+function topScore() {
+    if (finalScore >= 60) {
+        message_p.innerHTML = `You got ${(finalScore)} 🤩 and feeling good!`;
+    }
+}
+
+
