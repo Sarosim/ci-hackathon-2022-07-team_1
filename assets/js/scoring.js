@@ -30,14 +30,14 @@ const negativeEmojis = [
  * positively or negatively impact the score
  */
 
-// setInterval(function() {
+setInterval(function() {
 
-//     if (positiveEmojis) emPosX + emPosY === iphone emPosX {
-//         increaseScore(), emoji.remove();
-// //     } else (negativeEmojis) {
-// //         decreaseScore(), emoji.remove();
-//     }, 10
-//     })
+    if (positiveEmojis) emPosX + emPosY === iphone emPosX {
+        increaseScore(), emoji.remove();
+    } else (negativeEmojis) {
+        decreaseScore(), emoji.remove();
+    }, 10
+    })
 
 /**
  * Gets the current score and increases it by 1
