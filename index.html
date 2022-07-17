@@ -15,7 +15,9 @@
 </head>
 <body class="container-fluid">
     <nav class="flex">
-        <div class="logo, btn">Logo</div>
+        <div id="falling-heart-logo" >
+            <img src="/assets/images/Heart-eyes-falling emoji1.png" alt="">
+        </div>
         <h1 class="home-header">Catching Feelings</h1>
     </nav>
     <section class="flex">
@@ -24,13 +26,29 @@
             <button class="btn" id="instructions-btn">Instructions</button>
         </div>
         
-        <img class="hero-img" src="./assets/images/Hero Img.png" alt="">
+        <img class="hero-img" src="./assets/images/Hero img2.png" alt="">
     </section>
+
+    <div class="instructions-modal">
+        <div class="instructions-container">
+
+            <h2 id="instructions-header">Instructions</h2>
+            <ol id="instructions-list">
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, atque?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta tempore aspernatur nostrum labore quaerat. Deleniti.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae officiis recusandae nemo aspernatur excepturi, ad porro natus.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, minima quos. Dicta, veniam incidunt!</li>
+
+            </ol>
+            <button class="btn" id="close-instructions">Close Instructions</button>
+        </div>
+    </div>
     
     <footer>
-        <p>© Team Name</p>
+        <p>© Decode Hooligans</p>
         <a href=""><i class="fab fa-github github-logo"></i></a>
     </footer>
     <script src="https://kit.fontawesome.com/bc2311dd0c.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/instructions-modal.js"></script>
 </body>
 </html>
