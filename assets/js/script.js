@@ -44,42 +44,68 @@ function decreaseScore() {
 }
 
 /**
- * Check the score and
- * update the high score if it's higher
+ * Setting th timer
  */
 
-let finalScore = score;
+const defaultValue = 2 * 60;
+var countDownTime = defaultValue;
+const findTimeString = () => {
+    var minutes = String(Math.trunc(countDownTime / 60));
+    var seconds = String(countDownTime % 60);
+    if (minutes.length === 1) {
+      minutes = "0" + minutes;
+    }
+    if (seconds.length === 1) {
+      seconds = "0" + seconds;
+    }
+    return minutes + seconds;
+  };
+
+/**
+ * Setting the high score
+ */
+
 let highScore = document.getElementById("high-score");
 
 function increaseHighScore() {
 
-    if (finalScore >= highScore) {
-        let newHighScore = document.getElementById("high-score").innerText = finalScore;
+    if (timer === 0) {
+        (score >= highScore)
+        let newHighScore = document.getElementById("high-score").innerHTML = score;
     } 
 }
 })
 
-let timer = document.getElementById("timer");
+/**
+ * Reset button
+ */
 
-setTimeout (function() {
-    timer.innerHTML;
-}, 60000);
+document.getElementById("reset").addEventListener("click", function() {
+        loadGame () 
+})
+
+/**
+ * Results messages
+ */
 
 function lowScore() {
     if (finalScore <= 20) {
-        message_p.innerHTML = `You got ${(finalScore)} 💩! Maybe you need more practice.`;
+        message.innerHTML = `You got ${(finalScore)} 💩! Maybe you need more practice.`;
+        document.getElementById("message").style.display = 'block';
     }
 }
 
 function midScore() {
     if (finalScore >= 21 && finalScore <= 40) {
-        message_p.innerHTML = `You got ${(finalScore)} 😃! Not bad you've got a feel for this.`;
+        message.innerHTML = `You got ${(finalScore)} 😃! Not bad you've got a feel for this.`;
+        document.getElementById("message").style.display = 'block';
     }
 }
 
 function topScore() {
-    if (finalScore >= 60) {
-        message_p.innerHTML = `You got ${(finalScore)} 🤩 and feeling good!`;
+    if (finalScore >= 41) {
+        message.innerHTML = `You got ${(finalScore)} 🤩 and feeling good!`;
+        document.getElementById("message").style.display = 'block';
     }
 }
 
