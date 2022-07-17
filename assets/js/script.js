@@ -3,7 +3,6 @@
  * depending on the emojis that land on the phone
  */
 
-let scoring = 0;
 let score = 0;
 
 /**
@@ -68,7 +67,7 @@ function decreaseScore() {
  * catching the emojis
  */
 
-document.getElementById("phone").addEventListener(""), function checkEmoji() {
+document.getElementById("iphone").addEventListener(""), function checkEmoji() {
     
 }
 
@@ -78,13 +77,13 @@ document.getElementById("phone").addEventListener(""), function checkEmoji() {
  */
 
 let finalScore = document.getElementById("finalScore");
-let highScore = document.getElementById("highScore");
+let highScore = document.getElementById("high-score");
 
 function finalScore() {
 
     if (finalScore >= highScore) {
 
-        let newHighScore = document.getElementById("highScore").innerText = ++highScore;
+        let newHighScore = document.getElementById("high-score").innerText = ++highScore;
 
     } else {
 
