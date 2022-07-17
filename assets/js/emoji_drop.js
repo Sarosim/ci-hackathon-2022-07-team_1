@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let emPosY = emoji.style.top
     gameScreen.appendChild(emoji)
 
+
     let wrapperHeight = gameScreen.clientHeight
     let emojiHeight = emoji.clientHeight + 50
 
