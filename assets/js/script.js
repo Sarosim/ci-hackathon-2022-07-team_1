@@ -3,6 +3,7 @@
  * depending on the emojis that land on the phone
  */
 
+let scoring = 0;
 let score = 0;
 
 /**
