@@ -1,57 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.phone-slider')
-    console.log(slider)
-    let position = 0
-    let isGoingRight = false
-    let isGoingLeft = false
-    speed = 35 // can determine speed of slider
-    let leftTimerId
-    let rightTimerId
+    const slider = document.querySelector('.phone-slider');
+    let position = 50;
+    let stepSize = 0.5;
+    slider.style.left = position + '%';
+    let isGoingRight = false;
+    let isGoingLeft = false;
+    // let speed = 35 // can determine speed of slider removed because of requestAnimationFrame
+    let leftTimerId;
+    let rightTimerId;
 
     function slideRight() {
         if (isGoingLeft) {
-            clearInterval(leftTimerId)
-            isGoingLeft = false
+            isGoingLeft = false;
         }
-        isGoingRight = true
-        rightTimerId = setInterval( function () {
-            if (position <= 84) {
-                position += 1
-                slider.style.left = position + '%'
-                console.log(slider.style.left)
-            } else {
-                clearInterval(rightTimerId)
-                isGoingRight = false
-            }
-        }, speed)   
+        
+        if (position <= 84) {
+            isGoingRight = true; 
+            position += stepSize;
+            slider.style.left = position + '%';
+        } else {
+            isGoingRight = false;
+            window.cancelAnimationFrame(rightTimerId);
+        }
+        rightTimerId = window.requestAnimationFrame(slideRight);
     }
 
     function slideLeft() {
-        console.log("Left pressed");
         if (isGoingRight) {
-            clearInterval(rightTimerId)
-            isGoingRight = false
+            isGoingRight = false;
         }
-        isGoingLeft = true
-        leftTimerId = setInterval( function () {
-            if (position >= 1) {
-            position -= 1
-            slider.style.left = position + '%'
-            } else {
-                clearInterval(leftTimerId)
-                isGoingLeft = false
-            }
-        }, speed)
+        isGoingLeft = true;
+        if (position >= 1) {
+            position -= stepSize;
+            slider.style.left = position + '%';
+        } else {
+            window.cancelAnimationFrame(leftTimerId);
+            isGoingLeft = false;
+        }
+        leftTimerId = window.requestAnimationFrame(slideLeft);
     }
-
 
     // assign functions to keys
     function control(e) {
         if (e.keyCode === 39) { 
-            slideRight() // for when we press right
+            window.cancelAnimationFrame(leftTimerId);
+            slideRight(); // for when we press right
         } else if (e.keyCode === 37) { 
-            slideLeft() // for when we press left
+            window.cancelAnimationFrame(rightTimerId);
+            slideLeft(); // for when we press left
         }
     }
-    document.addEventListener('keydown', control)
+    document.addEventListener('keydown', control);
 })
