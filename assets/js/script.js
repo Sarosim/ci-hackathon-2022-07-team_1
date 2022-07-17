@@ -59,6 +59,12 @@ function increaseHighScore() {
 }
 })
 
+let timer = document.getElementById("timer");
+
+setTimeout (function() {
+    timer.innerHTML;
+}, 60000);
+
 function lowScore() {
     if (finalScore <= 20) {
         message_p.innerHTML = `You got ${(finalScore)} 💩! Maybe you need more practice.`;
