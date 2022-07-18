@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (emPosTop <= phoneY) {
                 let newPosY = emPosY ++
                 emoji.style.top = newPosY + "px"
-            } else {
+            } else {git 
                 if (iphone.left < emPosX && iphone.right > emPosX){
                     let foo = emoji.getAttribute('src')
                     if (goodEmoji.includes(foo)) {
