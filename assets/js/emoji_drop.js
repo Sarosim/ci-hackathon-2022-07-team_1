@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     let scoreElement = document.getElementById("score");
+    var mySecondInter
     const positionXArray = [18, 28, 42, 56, 70, 84,]
 
     const emojiArray = [ 
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const numOfDrops = []
 
     // Function to create random emoji at random x index points
-    setInterval(function () {
+    let myFirstInter = setInterval(function () {
     let id = positionXArray[Math.floor(Math.random() * positionXArray.length) + 1];
     let gameScreen = document.getElementById("screen-size")
     let emPosLeft = id
@@ -50,13 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
     gameScreen.appendChild(emoji)
 
     // Gets sizes, x and y for working elements positions
-    let wrapperHeight = gameScreen.clientHeight
-    let emojiHeight = emoji.clientHeight + 50
-    let phone = document.getElementById("iphone")
+     let phone = document.getElementById("iphone")
 
         /*Check to see if emoSets the point at which the 
         emoji is removed from the screen*/
-        setInterval(function() {
+            mySecondInter = setInterval(function() {
             let iphone = phone.getBoundingClientRect()
             let emPos = emoji.getBoundingClientRect()
             let emPosX = emPos.left + 25
@@ -68,20 +67,59 @@ document.addEventListener("DOMContentLoaded", () => {
                 emoji.style.top = newPosY + "px"
             } else {
                 if (iphone.left < emPosX && iphone.right > emPosX){
-                    for (let emojiNice in goodEmoji) {
-                        //increase score  
-                        let count = numOfDrops.length()
-                        if (count >= 100) {
-                            //game over function
-                        }
+                    let foo = emoji.getAttribute('src')
+                    if (goodEmoji.includes(foo)) {
+                        changeScore(5)
+                        emoji.remove()
                     } else {
-                        // decrease score
+                        changeScore(-5)
+                        emoji.remove()
                     }
-                    if(emoji )
-                }
+                } else {
                 emoji.remove()
+                }
             }
-        },5) // Speed to be set to increase as user moves though the game
+        }, 5) // Speed to be set to increase as user moves though the game
     }, 2000) // Speed to be set to increase as user moves though the game
+
+    function changeScore(score) {
+        let oldScore = parseInt(document.getElementById("score").innerText)
+        let newScore = oldScore + score
+        document.getElementById("score").innerText = newScore;
+
+        let counter = parseInt(document.getElementById("timer").innerText)
+        counter -= 1
+        document.getElementById("timer").innerText = counter;
+
+        gameOver()
+
+        }
+    function gameOver() {
+        clearInterval(myFirstInter)
+        clearInterval(mySecondInter)
+        checkHighScore()
+        alert("Game over")
+    }
+
+        function checkHighScore(gameScore) {
+            let highScoreElement = document.getElementById("high-score");
+            // Check if highScore is in Local Storage
+            let highScoreStr = localStorage.getItem("highScore");
+            if (highScoreStr === null) {
+                // If not, save GS to LS
+                localStorage.setItem('highScore', gameScore);
+            } else {
+                //If there is HS in LS 
+                let highScore = parseInt(highScoreStr);
+                // Compare LS High score with Game Score
+                if (gameScore > highScore) {
+                    // messageHighScoreModal.show()
+                    localStorage.setItem('highScore', gameScore);
+                    highScoreElement.textContent = gameScore;
+                } else {
+            
+                }
+            }
+        }
 })
 
