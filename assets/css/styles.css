@@ -308,3 +308,21 @@ section{
     box-shadow: 0.3rem 0.3rem #5A5A5A, 
     -0.3rem -0.3rem #5A5A5A;
 }
+
+#start, #reset {
+        padding: 1.5rem 2.5rem;
+        font-size: 2.4rem;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: black;
+        background-color: #FFEB85;
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 0.7rem 0.2rem #808080,
+        inset 0 0 0.7rem #808080;
+        text-decoration: none;
+        margin-right: auto;
+        margin-left: 10rem;
+      }
+

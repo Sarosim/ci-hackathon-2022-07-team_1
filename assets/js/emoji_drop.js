@@ -28,9 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
     //     "assets/images/emojis/poopEmoji1.png",
     //     "assets/images/emojis/sickEmoji1.png",
     // ]
+
+    //     let startGame = document.getElementById("start");
+    //     let resetGame = document.getElementById("reset");
+    //     startGame.addEventListener("click", loadGame);
+    //     resetGame.button.addEventListener("click", loadGame);
+
+    function loadGame() {
+        if (startGame.click, resetGame.click) {
+            setInterval(myFirstInter)
+            setInterval(mySecondInter)
+        } else {
+            clearInterval(myFirstInter)
+            clearInterval(mySecondInter)
+        }
+    }
+
     const numOfDrops = []
+    var
     // Function to create random emoji at random x index points
-    let myFirstInter = setInterval(function () {
+    myFirstInter = setInterval(function () {
     let id = positionXArray[Math.floor(Math.random() * positionXArray.length) + 1];
     let gameScreen = document.getElementById("screen-size")
     let emPosLeft = id
@@ -107,4 +124,5 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         }
+        
 })
