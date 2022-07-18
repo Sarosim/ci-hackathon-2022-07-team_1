@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     var mySecondInter
     const positionXArray = [18, 28, 42, 56, 70, 84,]
 
-    const emojiArray = [ 
+    const emojiArray = [
+
         "assets/images/emojis/angryEmoji1.png",
         "assets/images/emojis/bigSmileEmoji1.png",
         "assets/images/emojis/blinkEmoji1.png",
@@ -22,27 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/images/emojis/laughingEmoji0.5.png",
         "assets/images/emojis/star-eyeEmoji2.png"
     ]
-    // const badEmoji = [
-    //     "assets/images/emojis/angryEmoji1.png",
-    //     "assets/images/emojis/devilEmoji1.png",
-    //     "assets/images/emojis/freezeEmoji1.png",
-    //     "assets/images/emojis/poopEmoji1.png",
-    //     "assets/images/emojis/sickEmoji1.png",
-    // ]
 
-    const numOfDrops = []
+     const numOfDrops = []
 
-    function loadGame() {
-        if (startGame.click, resetGame.click) {
-            setInterval(myFirstInter)
-            setInterval(mySecondInter)
-        } else {
-            clearInterval(myFirstInter)
-            clearInterval(mySecondInter)
-        }
-    }
-
-    const numOfDrops = []
     // Function to create random emoji at random x index points
     let myFirstInter = setInterval(function () {
     let id = positionXArray[Math.floor(Math.random() * positionXArray.length) + 1];
@@ -61,8 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Gets sizes, x and y for working elements positions
      let phone = document.getElementById("iphone")
-
-        /*Check to see if emoSets the point at which the 
+        /*Check to see if emoSets the point at which the
 
         emoji is removed from the screen*/
             mySecondInter = setInterval(function() {
@@ -77,6 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 emoji.style.top = newPosY + "px"
             } else {
                 if (iphone.left < emPosX && iphone.right > emPosX){
+
+                    let beep = new Audio("assets/sounds/mixkit-positive-interface-beep-221.wav");
+                    beep.play();
+
                     let foo = emoji.getAttribute('src')
                     if (goodEmoji.includes(foo)) {
                         changeScore(5)
@@ -100,21 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
         let counter = parseInt(document.getElementById("timer").innerText)
         counter -= 1
         document.getElementById("timer").innerText = counter;
-
-        gameOver()
-
-
-        let counter = parseInt(document.getElementById("timer").innerText)
-        counter -= 1
-        document.getElementById("timer").innerText = counter;
-        gameOver()
-
-        }
-    function gameOver() {
-        clearInterval(myFirstInter)
-        clearInterval(mySecondInter)
-        checkHighScore()
-        alert("Game over")
+        if (counter <= 0) {
+            let finalScore = newScore
+            setTimeout(() => {
+            let restart = document.createElement('a')
+            restart.setAttribute('href', "index.html")
+            restart.textContent = "Play Later"
+            alert(`Game over, try beat your score of: ${finalScore}. If you want to play again close this alert and refresh your browser`)
+            alert.appendChild(restart)
+        }, "300")
+         }
     }
 })
 

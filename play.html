@@ -22,17 +22,15 @@
 
      </header>
 
-        <ul class="flex">
-
-            <li>Score: <span id="score">0</span></li>
-            <li>Count: <span id="timer">10</span></li>
-
-            <li>My High Score: <span id="high-score"></span></li>
-        </ul>
-
 
     <main>
         <div class="game-wrapper">
+            <ul class="flex score-box">
+                <li>Score: <span id="score">0</span></li>
+                <li>Count: <span id="timer">25</span></li>
+            </ul>
+            
+    
 
         <div id="screen-size" class="cloud-wrapper flex">
             
@@ -49,20 +47,26 @@
             <div class="restart-modal">
                 <div class="restart-container">
 
-        </div>
 
-        <button id="start" onclick="loadGame">Ready?</button>
-        <button id="reset" onclick="loadGame">Play again?</button>
+        
+                    <h2 id="restart-header">Game Over</h2>
+                <div id="message">
+                </div>
+                    <ul id="restart-list">
+                        <li>Score:<span id="score"></span></li>
+                        <li>Level:<span id="level"></span></li>
+                        <li><button class="btn" id="close-restart">Restart Game</button></li>
 
         
                     </ul>
+                    
                 </div>
             </div>
+            
         </div>
 
-        <button class="btn" id="instructions-btn">Instructions</button>
-
         </div>
+        <!--<button class="restart-temp btn" id="instructions-btn">Instructions</button>-->
     </main>
     <footer class="game-page-footer">
         <p>© Decode Hooligans</p>

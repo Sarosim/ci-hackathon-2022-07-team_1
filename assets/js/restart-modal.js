@@ -1,4 +1,4 @@
-const instructionsBtn = document.querySelector("#instructions-btn");
+/*const instructionsBtn = document.querySelector("#instructions-btn");
 const restartModal = document.querySelector(".restart-modal");
 const closeRestartBtn = document.querySelector("#close-restart");
 
@@ -9,4 +9,4 @@ function closeRestart(){
     restartModal.style.display = "none";
 }
 instructionsBtn.addEventListener("click", openRestart);
-closeRestartBtn.addEventListener("click", closeRestart);
+closeRestartBtn.addEventListener("click", closeRestart);*/
