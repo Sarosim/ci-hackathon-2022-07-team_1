@@ -14,7 +14,7 @@ html {
 }
 body{
     font-size: 1.6rem;
-    max-height: 100vh;
+    height: 100vh;
     background-image: linear-gradient(to bottom right, #8DBDFF, #FFEB85);
     font-family: 'Roboto', sans-serif;
 }
@@ -181,7 +181,7 @@ li{
     display: table-column;
     width: 23rem;
     margin: 0;
-    height: 24rem;
+    height: 12rem;
     float: right;
     margin-right: 10rem;
     background-color: #fff3b8;
