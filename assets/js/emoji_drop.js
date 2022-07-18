@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     let scoreElement = document.getElementById("score");
-    const positionXArray = [14, 28, 42, 56, 70, 84,]
+    const positionXArray = [18, 28, 42, 56, 70, 84,]
 
     const emojiArray = [ 
         "assets/images/emojis/angryEmoji1.png",
@@ -14,6 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/images/emojis/sickEmoji1.png",
         "assets/images/emojis/star-eyeEmoji2.png"
     ]
+
+    const goodEmoji = [ 
+        "assets/images/emojis/bigSmileEmoji1.png",
+        "assets/images/emojis/blinkEmoji1.png",
+        "assets/images/emojis/heart-eyesEmoji1.png",
+        "assets/images/emojis/laughingEmoji0.5.png",
+        "assets/images/emojis/star-eyeEmoji2.png"
+    ]
+
+    // const badEmoji = [
+    //     "assets/images/emojis/angryEmoji1.png",
+    //     "assets/images/emojis/devilEmoji1.png",
+    //     "assets/images/emojis/freezeEmoji1.png",
+    //     "assets/images/emojis/poopEmoji1.png",
+    //     "assets/images/emojis/sickEmoji1.png",
+    // ]
 
     const numOfDrops = []
 
@@ -31,29 +47,41 @@ document.addEventListener("DOMContentLoaded", () => {
     emoji.setAttribute("id", emojiID)
     emoji.style.left = emPosLeft + "%"
     let emPosY = emoji.style.top
-     gameScreen.appendChild(emoji)
+    gameScreen.appendChild(emoji)
 
     // Gets sizes, x and y for working elements positions
     let wrapperHeight = gameScreen.clientHeight
     let emojiHeight = emoji.clientHeight + 50
     let phone = document.getElementById("iphone")
-    let iphone = phone.getBoundingClientRect()
 
-        /*Check to see if emoSets the point at which the emoji is removed from the screen 
-        */
+        /*Check to see if emoSets the point at which the 
+        emoji is removed from the screen*/
         setInterval(function() {
-            let emPosX = emoji.style.left
+            let iphone = phone.getBoundingClientRect()
+            let emPos = emoji.getBoundingClientRect()
+            let emPosX = emPos.left + 25
+            let emPosTop = emPos.top
+            let phoneY = iphone.top
 
-            if (emPosY <= wrapperHeight - emojiHeight) {
+            if (emPosTop <= phoneY) {
                 let newPosY = emPosY ++
                 emoji.style.top = newPosY + "px"
-                if (iphone.left == emPosX && iphone.top == emPosY){
-                    console.log("We have contact")
-                    emoji.remove()
-                }
             } else {
+                if (iphone.left < emPosX && iphone.right > emPosX){
+                    for (let emojiNice in goodEmoji) {
+                        //increase score  
+                        let count = numOfDrops.length()
+                        if (count >= 100) {
+                            //game over function
+                        }
+                    } else {
+                        // decrease score
+                    }
+                    if(emoji )
+                }
                 emoji.remove()
             }
-        }, 10) // Speed to be set to increase as user moves though the game
+        },5) // Speed to be set to increase as user moves though the game
     }, 2000) // Speed to be set to increase as user moves though the game
 })
+
