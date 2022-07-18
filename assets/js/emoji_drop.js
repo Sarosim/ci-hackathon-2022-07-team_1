@@ -45,9 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const numOfDrops = []
-    var
     // Function to create random emoji at random x index points
-    myFirstInter = setInterval(function () {
+    let myFirstInter = setInterval(function () {
     let id = positionXArray[Math.floor(Math.random() * positionXArray.length) + 1];
     let gameScreen = document.getElementById("screen-size")
     let emPosLeft = id
