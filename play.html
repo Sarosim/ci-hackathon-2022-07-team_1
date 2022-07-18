@@ -24,8 +24,6 @@
      
         <ul class="flex">
             <li>Score: <span id="score">35</span></li>
-            <li>Timer: <span id="timer">5:00</span></li>
-            <li>Level : <span id="level">2</span></li>
             <li>My High Score: <span id="high-score"></span></li>
         </ul>
 
@@ -54,16 +52,10 @@
                 <div class="restart-container">
 
         </div>
-        <div id="message">
-        </div>
-        <button id="reset">Play again?</button>
 
-        
-                    <h2 id="restart-header">Game Over</h2>
-                    <ul id="restart-list">
-                        <li>Score:</li>
-                        <li>Level:</li>
-                        <li><button class="btn" id="close-restart">Restart Game</button></li>
+        <button id="start" onclick="loadGame">Ready?</button>
+        <button id="reset" onclick="loadGame">Play again?</button>
+
         
                     </ul>
                 </div>
