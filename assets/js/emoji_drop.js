@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 emoji.style.top = newPosY + "px"
             } else {
                 if (iphone.left < emPosX && iphone.right > emPosX){
+                    let beep = new Audio("assets/sounds/mixkit-positive-interface-beep-221.wav");
+                    beep.play();
                     let foo = emoji.getAttribute('src')
                     if (goodEmoji.includes(foo)) {
                         changeScore(5)
