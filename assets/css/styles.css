@@ -14,7 +14,7 @@ html {
 }
 body{
     font-size: 1.6rem;
-    min-height: 100vh;
+    max-height: 100vh;
     background-image: linear-gradient(to bottom right, #8DBDFF, #FFEB85);
     font-family: 'Roboto', sans-serif;
 }
@@ -30,6 +30,18 @@ nav, header{
 
 .play-header {
     margin-right: 55rem;
+}
+
+.OurEmojis {
+    margin-top: 6rem; 
+}
+
+.slogan {
+margin-left: 5rem;
+}
+
+.us {
+    margin-left: 15rem;
 }
 
 main{
@@ -151,9 +163,9 @@ li{
     margin-top: 1rem;
 }
 .cloud-wrapper {
-    width: 70%;
+    width: 65%;
     margin: 0 auto;
-    height: 80vh;
+    height: 70vh;
     position: relative;
     flex-direction: column;
     justify-content: space-between;
@@ -166,6 +178,7 @@ li{
 }
 
 .score-box {
+    display: table-column;
     width: 23rem;
     margin: 0;
     height: 24rem;
@@ -176,11 +189,16 @@ li{
 
 }
 
+.restart-temp {
+    float: right;
+}
+
 
 .restart-modal{
     display: none;
     width: 100%;
     position: fixed;
+    top: 35rem;
     z-index: 1;
 
 }
@@ -312,7 +330,6 @@ ol{
 footer {
     background-color: #5A5A5A;
     color: #fcfcef;
-    padding: 2rem;
     width: 100%;
     text-align: center;
 }
@@ -324,14 +341,23 @@ footer {
     width: 100%;
 }
 
+.game-page-footer {
+    height: 6rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 102%;
+}
+
 footer p {
+    padding: 2rem;
     float: left;
-    margin-top: 1rem;
 }
 
 .github-logo{
     font-size: 4rem;
     color: #fcfcef;
+    padding: 1rem;
 }
 
 .github-logo:hover {
@@ -345,14 +371,13 @@ footer p {
 }
 .button-container{
     flex-direction: column;
-    margin-right: auto;
-    margin-left: 35rem;
+    margin-right: 15rem;
     margin-top: 16rem;
     
 }
 section{
     flex-direction: row;
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
 .button-container > a{
     margin-bottom: 6rem;
@@ -362,7 +387,8 @@ section{
 /* Hero img*/
 
 .hero-img{
-    margin-right: 10rem;
+    margin-right: 20rem;
+    margin-bottom: 3.4rem;
     border-radius: 0.6rem;
     border: 2px solid black;
     box-shadow: 0.3rem 0.3rem #5A5A5A, 
