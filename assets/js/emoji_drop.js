@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let scoreElement = document.getElementById("score");
     var mySecondInter
     const positionXArray = [18, 28, 42, 56, 70, 84,]
+
     const emojiArray = [
+
         "assets/images/emojis/angryEmoji1.png",
         "assets/images/emojis/bigSmileEmoji1.png",
         "assets/images/emojis/blinkEmoji1.png",
@@ -21,7 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/images/emojis/laughingEmoji0.5.png",
         "assets/images/emojis/star-eyeEmoji2.png"
     ]
+
      const numOfDrops = []
+
     // Function to create random emoji at random x index points
     let myFirstInter = setInterval(function () {
     let id = positionXArray[Math.floor(Math.random() * positionXArray.length) + 1];
@@ -37,9 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     emoji.style.left = emPosLeft + "%"
     let emPosY = emoji.style.top
     gameScreen.appendChild(emoji)
+
     // Gets sizes, x and y for working elements positions
      let phone = document.getElementById("iphone")
         /*Check to see if emoSets the point at which the
+
         emoji is removed from the screen*/
             mySecondInter = setInterval(function() {
             let iphone = phone.getBoundingClientRect()
@@ -47,13 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
             let emPosX = emPos.left + 25
             let emPosTop = emPos.top
             let phoneY = iphone.top
+
             if (emPosTop <= phoneY) {
                 let newPosY = emPosY ++
                 emoji.style.top = newPosY + "px"
             } else {
                 if (iphone.left < emPosX && iphone.right > emPosX){
+
                     let beep = new Audio("assets/sounds/mixkit-positive-interface-beep-221.wav");
                     beep.play();
+
                     let foo = emoji.getAttribute('src')
                     if (goodEmoji.includes(foo)) {
                         changeScore(5)
@@ -68,10 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, 5) // Speed to be set to increase as user moves though the game
     }, 2000) // Speed to be set to increase as user moves though the game
+
     function changeScore(score) {
         let oldScore = parseInt(document.getElementById("score").innerText)
         let newScore = oldScore + score
         document.getElementById("score").innerText = newScore;
+
         let counter = parseInt(document.getElementById("timer").innerText)
         counter -= 1
         document.getElementById("timer").innerText = counter;
@@ -87,3 +98,4 @@ document.addEventListener("DOMContentLoaded", () => {
          }
     }
 })
+
