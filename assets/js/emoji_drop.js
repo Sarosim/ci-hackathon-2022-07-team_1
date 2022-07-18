@@ -15,15 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/images/emojis/sickEmoji1.png",
         "assets/images/emojis/star-eyeEmoji2.png"
     ]
-
-    const goodEmoji = [ 
+    const goodEmoji = [
         "assets/images/emojis/bigSmileEmoji1.png",
         "assets/images/emojis/blinkEmoji1.png",
         "assets/images/emojis/heart-eyesEmoji1.png",
         "assets/images/emojis/laughingEmoji0.5.png",
         "assets/images/emojis/star-eyeEmoji2.png"
     ]
-
     // const badEmoji = [
     //     "assets/images/emojis/angryEmoji1.png",
     //     "assets/images/emojis/devilEmoji1.png",
@@ -34,6 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const numOfDrops = []
 
+    function loadGame() {
+        if (startGame.click, resetGame.click) {
+            setInterval(myFirstInter)
+            setInterval(mySecondInter)
+        } else {
+            clearInterval(myFirstInter)
+            clearInterval(mySecondInter)
+        }
+    }
+
+    const numOfDrops = []
     // Function to create random emoji at random x index points
     let myFirstInter = setInterval(function () {
     let id = positionXArray[Math.floor(Math.random() * positionXArray.length) + 1];
@@ -54,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
      let phone = document.getElementById("iphone")
 
         /*Check to see if emoSets the point at which the 
+
         emoji is removed from the screen*/
             mySecondInter = setInterval(function() {
             let iphone = phone.getBoundingClientRect()
@@ -65,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (emPosTop <= phoneY) {
                 let newPosY = emPosY ++
                 emoji.style.top = newPosY + "px"
-            } else {git 
+            } else {
                 if (iphone.left < emPosX && iphone.right > emPosX){
                     let foo = emoji.getAttribute('src')
                     if (goodEmoji.includes(foo)) {
@@ -93,6 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         gameOver()
 
+
+        let counter = parseInt(document.getElementById("timer").innerText)
+        counter -= 1
+        document.getElementById("timer").innerText = counter;
+        gameOver()
+
         }
     function gameOver() {
         clearInterval(myFirstInter)
@@ -100,26 +116,5 @@ document.addEventListener("DOMContentLoaded", () => {
         checkHighScore()
         alert("Game over")
     }
-
-        function checkHighScore(gameScore) {
-            let highScoreElement = document.getElementById("high-score");
-            // Check if highScore is in Local Storage
-            let highScoreStr = localStorage.getItem("highScore");
-            if (highScoreStr === null) {
-                // If not, save GS to LS
-                localStorage.setItem('highScore', gameScore);
-            } else {
-                //If there is HS in LS 
-                let highScore = parseInt(highScoreStr);
-                // Compare LS High score with Game Score
-                if (gameScore > highScore) {
-                    // messageHighScoreModal.show()
-                    localStorage.setItem('highScore', gameScore);
-                    highScoreElement.textContent = gameScore;
-                } else {
-            
-                }
-            }
-        }
 })
 

@@ -6,7 +6,7 @@
 
 ## This is Team 'Our Emojis Got The Best of Us!'
 
-Miklos Sarosi [Sarosim](https://github.com/Sarosim), Phil [Bradders81](https://github.com/Bradders81), Mark Lau [mark3lau](https://github.com/mark3lau), Mia Rasmussen [MiaRasmussen05](https://github.com/MiaRasmussen05), Aziz Oyekan [oludare89](https://github.com/oludare89) and Jacob Conway [jjconway23](https://github.com/jjconway23)
+Miklos Sarosi [Sarosim](https://github.com/Sarosim), Phillip Bradley [Bradders81](https://github.com/Bradders81), Mark Lau [mark3lau](https://github.com/mark3lau), Mia Rasmussen [MiaRasmussen05](https://github.com/MiaRasmussen05), Aziz Oyekan [oludare89](https://github.com/oludare89) and Jacob Conway [jjconway23](https://github.com/jjconway23)
 
 This web application is for a fun and interactive game made in celebration of World Emoji Day.
 
@@ -63,13 +63,20 @@ We made extensive use of custom made emoji images from our very own team member,
 4. Balsamiq - Balsamiq was used to create the wireframes to provide a guide for the design.
 
 ## User Stories Testing
+1. As a site visitor, I can easily understand the main purpose of the site.
+* The landing page is clear with an image that illustrates the basic concept of the game as well as a play navigation button which immeadiately indicates that this is a game and emoji imagery is there that clearly indicates the theme. The light background provides a good contrast to the bold colours used in the title and imagery.
+2. As a site visitor, I can read instructions so that I can understand how to play the game.
+* TBD
+3. As a site visitor, I can navigate to the game page without effort.
+* I click on the play button on the landing page which immeadiately takes me to the game page.
+4. As a player of the game, I want to capture as many emojis as I can so that I achieve the highest score.
 * TBD
 
 ## Interactive Testing
 * TBD
 
 ## Known Bugs/Issues
-* TBD
+* When you press down excessively on the arrow keys, then the phone slider moves all the way in that direction at an accelerated speed. This affects the precision of the controls at times.
 
 ## Future Features
 * TBD
